@@ -55,8 +55,8 @@ Primer_projekta/
 
 ### Zašto ovakva podela?
 
-- **constants/** — Nikada ne pišemo "magične stringove" direktno u kod. Sve vrednosti koje se koriste na više mesta idu u Constants.java. Ako se URL promeni, menjamo ga na jednom mestu.
-- **locators/** — Svi lokatori su na jednom mestu. Ako se HTML promeni, ažuriramo samo Locators.java, bez dodirivanja ostatka koda.
+- **constants/** — Nikada ne pišemo stringove direktno u kod. Sve vrednosti koje se koriste na više mesta idu u Constants.java. Ako se URL promeni, menjamo ga na jednom mestu.
+- **locators/** — Svi lokatori su na jednom mestu. Ako se HTML promeni, ažuriramo samo Locators.java, bez menjanja ostatka koda.
 - **pages/** — Svaka stranica aplikacije ima svoju klasu. Klasa zna samo za svoju stranicu i ne meša se u logiku drugih.
 - **base/** — Zajednički kod koji koriste svi testovi (pokretanje browsera, zatvaranje browsera).
 - **tests/** — Samo test scenariji. Nikakva logika, samo pozivanje metoda.
@@ -193,7 +193,7 @@ XPath je jezik za navigaciju kroz HTML strukturu. Zamislite HTML kao stablo — 
 ### Relativni vs Apsolutni XPath
 
 ```xpath
-// Apsolutni — krhak, lomi se ako se HTML promeni
+// Apsolutni — krhak, prestaje da radi se ako se HTML promeni
 /html/body/div[3]/div[1]/form/div[2]/input
 
 // Relativni — stabilan, preporučen
@@ -332,7 +332,7 @@ assertTrue(getYear() >= 2020, "Godište je pre 2020");
 - **Ne kopirajte XPath iz DevTools slepo** — naučite da ga pišete ručno, biće pouzdaniji
 - **Konstante su vaši prijatelji** — nikada ne pišite stringove direktno u test metode
 - **Jedan test — jedan scenario** — test treba da proverava jednu stvar, ne sve odjednom
-- **Ime testa treba da opisuje šta se testira** — `pretragaPoKriterijumimaIVerifikacijaOglasa` je dobro ime
+- **Ime testa treba da opisuje šta se testira** — `pretragaPoKriterijumimaIVerifikacijaOglasaTest` je dobro ime
 
 ---
 
